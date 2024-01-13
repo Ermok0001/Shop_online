@@ -1,0 +1,165 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 50px 100px 0px 100px;
+}
+h1,h2, h3, h4, button{
+  color: #999990;
+}
+p, ::placeholder, input{
+  color: #999990;
+}
+/* //////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////// */
+
+/* Навигационная панель */
+.All_Navigation{
+  display: flex;
+  justify-content: space-between;
+}
+.Navigation{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 3px;
+}
+input{
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+/* //////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////// */
+
+/* SideBAr */
+.Sidebar{
+  position: absolute;
+  top: 0;
+  left: -370px;
+  padding: 2em 5em;
+  background-color: #ffffff;
+  height: 100vh;
+  box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.3) ;
+  transition: all 0.3s ease-in-out; 
+}
+
+.Sidebar ul{
+  list-style: none;
+  cursor: pointer;
+}
+.Menu_img{
+  cursor: pointer;
+}
+.Sidebar.open{
+  position: fixed;
+  left: 0px;
+}
+
+/* //////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////// */
+
+/* Сортировка */
+.Sorting{
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+.Sorting_other{
+  display: flex;
+  column-gap: 100px;
+  cursor: pointer;
+}
+.Sorting_other p{
+  padding-bottom: 10px;
+}
+.Sorting h4{
+  cursor: pointer;
+}
+.Sorting_other input{
+  background: #ffffff;
+      border: 3px solid #999990;
+      border-radius: 10px;
+      padding: 0px 5px 0px 5px;
+      cursor: pointer;
+      -webkit-appearance: none;
+}
+/* //////////////////////////////////////////////////////////// */
+
+/* Все продукты */
+.All_Product {
+  padding-left: 15px;
+}
+.Products{
+  display: grid;
+  grid-template-columns: repeat(3, 250px);
+  column-gap: 50px;
+  font-size: 7px;
+  row-gap: 20px;
+}
+.Product{
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 300px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border: solid;
+  border-radius: 32px;
+  border-color: rgb(132, 107, 107);
+}
+.Product h2{
+  font-size: 17px;
+}
+.Product img{
+  height: 100px;
+}
+/* //////////////////////////////////////////////////////////// */
+button{
+  padding: 10px 20px;
+  border: solid 1.5px gray;
+  border-radius: 20px;
+  cursor: pointer;
+}
+/* //////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////// */
+
+/* Загрузка */
+.Loading_cont{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.spinner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 10px solid gray;
+  border-top: 10px solid black ;
+  border-radius: 100%;
+  height: 6em;
+  width: 6em;
+  animation: spin 1s infinite linear;
+}
+/* //////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////// */
+
+/* Все Анимаций */
+button:hover{
+  background-color: red;
+  color: white;
+}
+.Product:hover{
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+/* //////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////// */
+
+@keyframes spin{
+  0%{
+    transform:rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
