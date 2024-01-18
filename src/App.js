@@ -8,8 +8,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Favorite } from './components/favorite';
 import { Card } from './components/Card';
 
-function App() {
-  // const { data, isLoading, error } = useGetProductsQuery();
+function App() { 
   const { data: categoriesData, isLoading: categoriesLoading, error: categoriesError } = useGetCategoriesQuery();
 
   return(

@@ -1,9 +1,8 @@
 import { ProducCard } from "./ProductCard";
 
-export function Products(){
+export function Products({content}){
     return(
         <div className="All_Product">
-            <h1>Популярное</h1>
 
             <div className="Sorting">
                 <p>Сортировать по:</p>
@@ -23,7 +22,9 @@ export function Products(){
                </div>
 
             <div className="Products">
-                <ProducCard></ProducCard>
+                {content.map((product)=>{
+                    return <ProducCard key={product.id} product={product}></ProducCard>
+                })}
                 </div>
                 
             </div>

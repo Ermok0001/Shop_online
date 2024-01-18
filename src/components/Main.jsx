@@ -1,14 +1,16 @@
 import { Products } from './Products';
-import React from 'react';
 import { useGetProductsByCategoriesQuery, useGetProductsQuery } from '../store/api';
 import { Loading } from './Loading';
 import {Error} from './Error'
 
 export function Main(props) {
 
-  const { data, isLoading, error } = props.theme === "popular"
+  const selectedHook = props.theme ===
+  "popular"
   ? useGetProductsQuery()
-  : useGetProductsByCategoriesQuery(props.theme);
+  :
+  useGetProductsByCategoriesQuery(props.theme)
+  const {data, isLoading, error} = selectedHook
 
   return isLoading? (
     <Loading></Loading>

@@ -11,7 +11,7 @@ export function SideBar(props){
                 {isLoading? <h1>Loading...</h1>: error? <h1>Error</h1>: 
                 data.map ((category)=>{
                     return(
-                        <li>
+                        <li key={category}>
                             <Link to={category}>
                             <p>{category.toUpperCase()}</p>
                             </Link>

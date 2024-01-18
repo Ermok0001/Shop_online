@@ -21,7 +21,6 @@ export function Navigation() {
         <img className="Menu_img" onClick={toggleMenu} src={Menu_img} alt="" />
         <div className="Navigation">
           <img src={Search_img} alt="" />
-          <img src={Like_img} alt="" />
           <input type="text" placeholder="Search" />
           <Link to="/fav">
             <img className="Like_img" src={Like_img} alt="" />
