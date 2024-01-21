@@ -15,14 +15,14 @@ export function PaymentComp({total}){
                         <div className="Validity_period">
                         <p>Срок действия карты</p>
                         <div className="DD_MM">
-                    <input type="text" />
-                    <input type="text" />
+                    <input type="text" placeholder="00" />
+                    <input type="text" placeholder="00" />
                         </div>
                         </div>
 
                         <div className="Validity_period">
                             <p>CVV</p>
-                        <input type="text" />
+                        <input type="text"  placeholder="000"/>
                         </div>
 
                     </div>

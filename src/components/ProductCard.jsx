@@ -6,6 +6,7 @@ import cart from "./assets/shopping_bag.png";
 import { InfoProduct } from "./infoProduct";
 import { addToCart, addTofav, removeFromCart, removeFromfav } from "../store/reducer";
 import { useState } from "react";
+import { Rating } from "./Rating";
 
 export function ProducCard({product}) {
   const cartState = useSelector(state=>state.cart)
@@ -27,6 +28,7 @@ export function ProducCard({product}) {
       <img src={isInCart ? cart2 : cart} onClick={()=>{dispatch(isInCart ? removeFromCart(product) : addToCart(product)); console.log(product)}} alt="" />
       </div>
       <h2>{product.price}$</h2>
+      <Rating rating={product.rating.rate}></Rating>
       <button onClick={()=>{setIsAboutActive(!isAboutActive)}}>Подробнее</button>
       {isAboutActive ? (
         <div className="blur">

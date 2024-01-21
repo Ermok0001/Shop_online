@@ -16,7 +16,7 @@ export const cartSlice = createSlice({
         },
     },
     addToTotal: (state, action)=>{
-        state.total += action.payload
+        state.total += action.payload;
     },
     removeFromTotal: (state, action)=>{
         state.total -= action.payload;
@@ -42,3 +42,18 @@ export const favoriteSlice = createSlice({
 }) 
 
 export const {addTofav,removeFromfav} = favoriteSlice.actions
+
+
+export const sortedProductSlice = createSlice({
+    name: 'sort',
+    initialState: {
+        sortedContent: [],
+    },
+    reducers: {
+        addToSortedContent: (state, action) => {
+            state.sortedContent = action.payload
+        }
+    }
+})
+
+export const {addToSortedContent} = sortedProductSlice.actions;

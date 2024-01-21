@@ -6,10 +6,21 @@ import Like_img from "./assets/favorite_border.png";
 import Search_img from "./assets/search.png";
 import Person_img from "./assets/person_outline.png";
 import Shopping_img from "./assets/shopping_bag.png";
+import { useDispatch } from "react-redux";
+import { useGetProductsQuery } from "../store/api";
+import { addToSortedContent } from "../store/reducer";
 
 export function Navigation() {
+  const dispatch = useDispatch()
   const location = useLocation();
+  const {data} = useGetProductsQuery()
   const [MenuOpen, setMenuOpen] = useState(false);
+  let [inputValue, setInputValue] = useState("")
+
+  function handleSearch(){
+    const sortedArray = data.filter((item) => item.title.includes(inputValue))
+    dispatch(addToSortedContent(sortedArray))
+  }
 
   function toggleMenu() {
     setMenuOpen(!MenuOpen);
@@ -20,8 +31,10 @@ export function Navigation() {
       <div className="All_Navigation">
         <img className="Menu_img" onClick={toggleMenu} src={Menu_img} alt="" />
         <div className="Navigation">
-          <img src={Search_img} alt="" />
-          <input type="text" placeholder="Search" />
+          <img style={{cursor:"pointer"}} src={Search_img} onClick={()=>{
+            handleSearch()
+          }} alt="" />
+          <input type="text" value={inputValue} onChange={(e) => {setInputValue(e.target.value)}} placeholder="Search" />
           <Link to="/fav">
             <img className="Like_img" src={Like_img} alt="" />
           </Link>

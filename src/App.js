@@ -22,7 +22,7 @@ function App() {
 
           {categoriesData.map((category)=>{
             return(
-              <Route path={`/${category}`} element={<Main theme={category}></Main>} ></Route>
+              <Route key={category} path={`/${category}`} element={<Main theme={category}></Main>} ></Route>
             )
           })}
         </Routes>

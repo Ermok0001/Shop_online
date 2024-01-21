@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux"
-import rating from "./assets/рэйтинг.png"
 import cart from "./assets/shopping_bag.png"
 import catr2 from "./assets/shopping_bag_filled (1).png"
 import fav from "./assets/favorite (1).png"
 import { addToCart, removeFromCart, removeFromfav } from "../store/reducer";
+import { Rating } from "./Rating"
 
 export function FavoriteCard({productInfo}){
     const dispatch = useDispatch();
@@ -20,7 +20,7 @@ export function FavoriteCard({productInfo}){
             <div>
                 <h1>{productInfo.title}</h1>
                 <p>{productInfo.category.toUpperCase()}</p>
-                <img className="rating" src={rating} alt="" />
+                <Rating rating={productInfo.rating.rate}></Rating>
                 <div className="basket_price">
                     <div>
                     <h2>{productInfo.price}$</h2>

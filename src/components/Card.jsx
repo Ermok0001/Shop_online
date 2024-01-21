@@ -14,9 +14,11 @@ export function Card(){
                 <div>
                     <div className="info_product">
                         <h2>Наименование</h2>
+                        <div className="other_info_product">
                         <h2>Количество</h2>
                         <h2>Цена</h2>
                         <h2>Стоимость</h2>
+                        </div>
                     </div>
                     {cartState.cart == [] ?(
                     <h1>Корзина пуста</h1>
