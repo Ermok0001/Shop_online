@@ -14,13 +14,13 @@ export const cartSlice = createSlice({
             state.cart = state.cart.filter(
                 (product)=> product.id !==action.payload.id)
         },
+        addToTotal: (state, action)=>{
+            state.total += action.payload;
+        },
+        removeFromTotal: (state, action)=>{
+            state.total -= action.payload;
+        }
     },
-    addToTotal: (state, action)=>{
-        state.total += action.payload;
-    },
-    removeFromTotal: (state, action)=>{
-        state.total -= action.payload;
-    }
 })
 
 export const {addToCart, removeFromCart, addToTotal, removeFromTotal} = cartSlice.actions;
